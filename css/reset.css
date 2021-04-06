@@ -3,6 +3,12 @@
 }
 html {
 	box-sizing: border-box;
+	--primary-col: #000000;    /* main colour */
+	--primary-alt: #AE976F;    /* variant */
+	--primary-on: #ffffff;     /* for text or icons */
+	--secondary-col: #3399ff;
+	--secondary-alt: #99ccff;
+	--secondary-on: #000000;
 }
 body {
 	margin: 0;
@@ -81,4 +87,7 @@ legend.legend {
 	border-style: none;
 	border-color: initial;
 	border-image: initial;
+}
+.rating .material-icons, dd>span.material-icons {
+	color:#E9BE0F;
 }
