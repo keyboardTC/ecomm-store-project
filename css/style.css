@@ -6,7 +6,7 @@
 	color:var(--alt-color);
 }
 .product{
-	margin-bottom: 2em;
+	margin-bottom: 3em;
 }
 header.page-header{
     display: grid;
@@ -82,4 +82,24 @@ main{
     margin: 0 -1em -1em -1em;
     padding: 2em;
     display: grid;
+}
+.footer-links{
+    margin-bottom: 2em;
+}
+.legal, .social{
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+.legal :nth-child(2) {
+    padding: 0 1em;
+   border-left: .2em solid var(--alt-text-color);
+   border-right: .2em solid var(--alt-text-color);
+ }
+ .social{
+     justify-content:center;
+     margin-bottom: 2em;
+ }
+.footer-nav{
+    text-align: center;
 }
