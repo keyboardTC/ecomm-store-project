@@ -1,1 +1,85 @@
 /* Note there a few "reset" styles given in reset.css. Review those before you begin */
+.rating .material-icons, dd>span.material-icons {
+	color:#E9BE0F;
+}
+.page-header .fa {
+	color:var(--alt-color);
+}
+.product{
+	margin-bottom: 2em;
+}
+header.page-header{
+    display: grid;
+    text-align: center;
+}
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2em;
+}
+.navigation{
+    display: none;
+}
+.header-cart, .prodcut-list-footer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-between; 
+    /* background-color: green; */
+}
+.log0{
+    margin:0px auto;
+}
+.page-title{
+	background-color: var(--global-color-secondary);
+	margin: 0 -1em;
+	margin-bottom: 2em;
+}
+.filters {
+    display: none;
+}
+main{
+    display: grid;
+}
+.pages, .iterm-properties, .iterm-properties fieldset> ol, .iterm-properties fieldset> ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+.rating {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: .5em;
+}
+.iterm-properties{
+    display: flex;
+    justify-content:flex-start;
+    margin-bottom: 1em;
+}
+.rating dd{
+    display: flex;
+    margin-left: .3em;
+}
+.rating dd p{
+    margin: 3px 6px 0px 0px;
+}
+.add-to-cart-btn{
+    background-color:#eb832fa9;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+.add-to-fav {
+    background-color: var(--global-color-primary);
+}
+.page-footer{
+    background-color: var(--secondary-on);
+    margin: 0 -1em -1em -1em;
+    padding: 2em;
+    display: grid;
+}

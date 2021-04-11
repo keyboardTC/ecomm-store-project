@@ -3,31 +3,40 @@
 }
 html {
 	box-sizing: border-box;
-	--primary-col: #000000;    /* main colour */
-	--primary-alt: #AE976F;    /* variant */
-	--primary-on: #ffffff;     /* for text or icons */
-	--secondary-col: #3399ff;
+	--global-color-primary: #222222; 
+	--global-color-secondary: #343435;   /* main colour */
+	--alt-color:#ae976f;    /* variant */
+	--prim-text-color: #ffffff;     /* for text or icons */
+	--alt-text-color: #7a7a7a;     /* for text or icons */
 	--secondary-alt: #99ccff;
-	--secondary-on: #000000;
+	--secondary-on: #131313;
+	--font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 body {
-	margin: 0;
+	margin: 1em;
+	background-color: var(--global-color-primary);
+	font-family: var(--font-family-monospace);
+	color: var(--prim-text-color);
+}
+p{
+	font-family: var(--font-family-sans-serif);
+	color: var(--alt-text-color);
 }
 
-
 /* Preview each of these suggested resets before beginning your project styling */
-/*
+
 img {
 	max-width: 100%;
 	height: auto;
 	vertical-align: bottom;
-} */
-/*
+}
+
 ul, ol, dl {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-} */
+}
 /*
 li > ul, li > ol {
 	padding-left: 2.5em;
@@ -88,6 +97,16 @@ legend.legend {
 	border-color: initial;
 	border-image: initial;
 }
-.rating .material-icons, dd>span.material-icons {
-	color:#E9BE0F;
+a, button, a:hover {
+    color:var(--alt-color);
+    text-decoration: none;
+    transition: all .25s ease;
+    cursor: pointer;
+}
+h3{
+	font-size: 2rem;
+	margin: .5em 0px;;
+}
+main{
+	margin-bottom: 2em;
 }
