@@ -15,16 +15,33 @@
   <body>
     <header class="page-header">
       <div class="header-wrapper">
-        <!-- Navigation menu -->      
-        <nav aria-label="Primary" class="navigation">
+        
+        <div class="header-container">
+          <!-- Navigation menu and toggle button (non-functional) -->
+          <button type="button" class="nav-toggle">
+            <!-- <span class="material-icons">menu</span> -->
+            <i class="fas fa-bars fa-2x"></i>
+          </button>          
           <!-- Search for a product (non-functional) -->
           <form class="search">
             <label>Search
               <input type="search" name="find" id="find">
             </label>
             <button type="button"><i class="fas fa-search"></i></button>
-          </form>
+          </form>  
+          <!-- LOGO -->
+          <a href="index.html" class="logo">WINE HUB<!-- Site logo --></a>
+          <!-- Additional links -->
+          <ul class="header-cart">
+            <li><a href="#"><i class="fa far fa-heart fa-2x"></i></a></li>
+            <li><a href="#"><i class="fa fas fa-shopping-cart fa-2x" aria-label="Items in your cart"></i></a></li>
+          </ul>
+        </div>
+        
+        <!-- Navigation menu -->      
+        <nav aria-label="Primary" class="navigation">
           <ul class="menu">
+            <li><a href="#">HOME</a></li>
             <li><a href="#">Shop</a>
               <ul class="submenu">
                 <li><a href="#">Dessert Wine</a></li>
@@ -36,94 +53,89 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
-
-        <!-- Navigation menu and toggle button (non-functional) -->
-        <button type="button" class="nav-toggle">
-          <!-- <span class="material-icons">menu</span> -->
-          <i class="fas fa-bars fa-2x"></i>
-        </button>
-  
-        <!-- LOGO -->
-        <a href="index.html" class="logo">WINE HUB<!-- Site logo --></a>
-
-        <!-- Additional links -->
-        <ul class="header-cart">
-          <li><a href="#"><i class="fa far fa-heart fa-2x"></i></a></li>
-          <li><a href="#"><i class="fa fas fa-shopping-cart fa-2x" aria-label="Items in your cart"></i></a></li>
-        </ul>
       </div>
 
       <!-- Page Title -->
       <div class="page-title">
         <h2>PAGE TITLE</h2>
       </div>
-
     </header>
 
 <!--------- Main content ---------->
     <main class="products">
 
-      <!-- Filtering product form -->
-      <form class="filters">
-        <h2>Filters</h2>
-        <div class="filter-options">
-          <fieldset>
-            <legend>Category</legend>
-            <ul class="filter-list">
-              <li><input type="checkbox" name="colour" value="black" id="black"> <label for="dessert-wine">Dessert Wine</label></li>
-              <li><input type="checkbox" name="colour" value="white" id="white"> <label for="red-wine">Red Wine</label></li>
-              <li><input type="checkbox" name="colour" value="grey" id="grey"> <label for="rose-wine">Rose Wine</label></li>
-              <li><input type="checkbox" name="colour" value="red" id="red"> <label for="white-wine">White Wine</label></li>
-            </ul>
-          </fieldset>
-          <fieldset>
-            <legend>Weight</legend>
-            <ol class="filter-list">
-              <li><input type="checkbox" name="Weight" value="100g" id="100g"> <label for="xs">100g</label></li>
-              <li><input type="checkbox" name="Weight" value="200g" id="200g"> <label for="sm">200g</label></li>
-              <li><input type="checkbox" name="Weight" value="800g" id="800g"> <label for="md">800g</label></li>
-            </ol>
-          </fieldset>
-          <fieldset>
-            <legend>Ratings (above)</legend>
-            <ol class="filter-list">
-              <li>
-                <input type="radio" name="rating" value="4" id="aboveFour">
-                <label for="aboveFour" class="rating">
-                  <span class="material-icons">star</span><span class="material-icons" >star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="3" id="aboveThree">
-                <label for="aboveThree" class="rating">
-                  <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="2" id="aboveTwo">
-                <label for="aboveTwo" class="rating">
-                  <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-              <li>
-                <input type="radio" name="rating" value="1" id="aboveOne">
-                <label for="aboveOne" class="rating">
-                  <span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
-                </label>
-              </li>
-            </ol>
-          </fieldset>
+      <!-- Side Bar-->
+      <aside class="sidebar">
+        <!-- Filtering product form -->    
+
+        <div class="filter-toggle">
+          <button type="button" class="nav-toggle">
+            <!-- <span class="material-icons">menu</span> -->
+            <i class="fas fa-bars fa-2x"></i>
+          </button>            
+          <h2>Filters</h2>
         </div>
-        <fieldset>
-          <label for="sort">Sort</label>
-          <select name="sort" id="sort">
-            <option value="price-high">Price, highest to lowest</option>
-            <option value="price-low">Price, lowest to highest</option>
-            <option value="price-low">Sort by popularity</option>
-            <option value="newest">Sort by latest</option>
-          </select>
-        </fieldset>
-      </form>
+
+        <form class="filters m-hide">
+          <div class="filter-options">
+            <fieldset>
+              <legend>Category</legend>
+              <ul class="filter-list">
+                <li><input type="checkbox" name="colour" value="black" id="black"> <label for="dessert-wine">Dessert Wine</label></li>
+                <li><input type="checkbox" name="colour" value="white" id="white"> <label for="red-wine">Red Wine</label></li>
+                <li><input type="checkbox" name="colour" value="grey" id="grey"> <label for="rose-wine">Rose Wine</label></li>
+                <li><input type="checkbox" name="colour" value="red" id="red"> <label for="white-wine">White Wine</label></li>
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend>Weight</legend>
+              <ol class="filter-list">
+                <li><input type="checkbox" name="Weight" value="100g" id="100g"> <label for="xs">100g</label></li>
+                <li><input type="checkbox" name="Weight" value="200g" id="200g"> <label for="sm">200g</label></li>
+                <li><input type="checkbox" name="Weight" value="800g" id="800g"> <label for="md">800g</label></li>
+              </ol>
+            </fieldset>
+            <fieldset>
+              <legend>Ratings (above)</legend>
+              <ol class="filter-list">
+                <li>
+                  <input type="radio" name="rating" value="4" id="aboveFour">
+                  <label for="aboveFour" class="rating">
+                    <span class="material-icons">star</span><span class="material-icons" >star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="3" id="aboveThree">
+                  <label for="aboveThree" class="rating">
+                    <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="2" id="aboveTwo">
+                  <label for="aboveTwo" class="rating">
+                    <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                  </label>
+                </li>
+                <li>
+                  <input type="radio" name="rating" value="1" id="aboveOne">
+                  <label for="aboveOne" class="rating">
+                    <span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
+                  </label>
+                </li>
+              </ol>
+            </fieldset>
+          </div>
+          <fieldset>
+            <label for="sort">Sort</label>
+            <select name="sort" id="sort">
+              <option value="price-high">Price, highest to lowest</option>
+              <option value="price-low">Price, lowest to highest</option>
+              <option value="price-low">Sort by popularity</option>
+              <option value="newest">Sort by latest</option>
+            </select>
+          </fieldset>
+        </form>
+      </aside>
 
       <section class="results">
         <h2 class="subheading">Results</h2>
@@ -155,7 +167,7 @@
               </ol>
             </fieldset>
           </form>
-          <footer class="prodcut-list-footer">
+          <footer class="prodcut-list-cart">
             <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
             <button type="button" class="add-to-fav"><i class="fas far fa-heart "></i></button>
           </footer>
@@ -188,7 +200,7 @@
               </ol>
             </fieldset>
           </form>
-          <footer class="prodcut-list-footer">
+          <footer class="prodcut-list-cart">
             <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
             <button type="button" class="add-to-fav"><i class="fas far fa-heart "></i></button>
           </footer>
@@ -221,7 +233,7 @@
               </ol>
             </fieldset>
           </form>
-          <footer class="prodcut-list-footer">
+          <footer class="prodcut-list-cart">
             <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
             <button type="button" class="add-to-fav"><i class="fas far fa-heart "></i></button>
           </footer>
@@ -254,7 +266,7 @@
               </ol>
             </fieldset>
           </form>
-          <footer class="prodcut-list-footer">
+          <footer class="prodcut-list-cart">
             <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
             <button type="button" class="add-to-fav"><i class="fas far fa-heart "></i></button>
           </footer>
@@ -287,7 +299,7 @@
               </ol>
             </fieldset>
           </form>
-          <footer class="prodcut-list-footer">
+          <footer class="prodcut-list-cart">
             <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
             <button type="button" class="add-to-fav"><i class="fas far fa-heart "></i></button>
           </footer>
@@ -320,64 +332,68 @@
               </ol>
             </fieldset>
           </form>
-          <footer class="prodcut-list-footer">
+          <footer class="prodcut-list-cart">
             <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
             <button type="button" class="add-to-fav"><i class="fas far fa-heart "></i></button>
           </footer>
         </article>
+        <nav aria-label="Pagination" class="pagination">
+          <p>1-6 of 23 products found</p>
+          <ol class="pages">
+            <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
+            <li><a href="#" aria-label="Page 2">2</a></li>
+            <li><a href="#" aria-label="Page 3">3</a></li>
+            <li><a href="#" aria-label="Page 4">4</a></li>
+            <li><a href="#" aria-label="Page 5">5</a></li>
+          </ol>
+        </nav>
       </section>
-
-      <nav aria-label="Pagination" class="pagination">
-        <p>1-6 of 23 products found</p>
-        <ol class="pages">
-          <li><a href="#" aria-label="Current Page, Page 1" aria-current="true">1</a></li>
-          <li><a href="#" aria-label="Page 2">2</a></li>
-          <li><a href="#" aria-label="Page 3">3</a></li>
-          <li><a href="#" aria-label="Page 4">4</a></li>
-          <li><a href="#" aria-label="Page 5">5</a></li>
-        </ol>
-      </nav>
     </main>
 
     <footer class="page-footer">
-      <section class="footer-links">
-        <div>
-          <h3>ABOUT</h3>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eius mollitia obcaecati, neque rerum dignissimos, recusandae ducimus qui reiciendis nam necessitatibus? Natus est reprehenderit eligendi facere, cupiditate magnam explicabo in.</p>
-        </div>
-        <div>
-          <h3>QIUCK LINKS</h3>
-          <ol>
-            <li><a href="">HOME</a></li>
-            <li><a href="">SHOP</a></li>
-            <li><a href="">ABOUT</a></li>
-            <li><a href="">CONTACT</a></li>
-          </ol>
-        </div>
-        <div>
-          <h3>CATEGORIES</h3>
-          <ol>
-            <li><a href="">DESSERT WINE</a></li>
-            <li><a href="">RED WINE</a></li>
-            <li><a href="">ROSE WINE</a></li>
-            <li><a href="">WHITE WINE</a></li>
-          </ol>
-        </div>
-      </section>
+      <div class="main-footer">
+        <section class="footer-links">
+          <div>
+            <h3>ABOUT</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam eius mollitia obcaecati, neque rerum dignissimos, recusandae ducimus qui reiciendis nam necessitatibus? Natus est reprehenderit eligendi facere, cupiditate magnam explicabo in.</p>
+          </div>
+          <div>
+            <h3>QIUCK LINKS</h3>
+            <ol>
+              <li><a href="">HOME</a></li>
+              <li><a href="">SHOP</a></li>
+              <li><a href="">ABOUT</a></li>
+              <li><a href="">CONTACT</a></li>
+            </ol>
+          </div>
+          <div>
+            <h3>CATEGORIES</h3>
+            <ol>
+              <li><a href="">DESSERT WINE</a></li>
+              <li><a href="">RED WINE</a></li>
+              <li><a href="">ROSE WINE</a></li>
+              <li><a href="">WHITE WINE</a></li>
+            </ol>
+          </div>
+        </section>
+        
+        <section class="social-section">
+          <ul class="social">
+            <li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+          </ul>
+        </section>
 
-      <ul class="social">
-        <li><a href="#"><i class="fab fa-facebook fa-2x"></i></a></li>
-        <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
-        <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
-      </ul>
-      <nav aria-label="Legal" class="footer-nav">
-        <ul class="legal">
-          <li><a href="#">Terms of Use</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Accessibility Policy</a></li>
-        </ul>
-      </nav>
-      <p class="copyright">&copy; Copyright, 1991.</p>
+        <nav aria-label="Legal" class="footer-nav">
+          <ul class="legal">
+            <li><a href="#">Terms of Use</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Accessibility Policy</a></li>
+          </ul>
+        </nav>
+        <p class="copyright">&copy; Copyright, 1991.</p>
+      </div>
     </footer>
 
   </body>
