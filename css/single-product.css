@@ -1,0 +1,28 @@
+.single-product{
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "prod-alt-pics prod-main-pic"
+    "prod-details prod-details";
+    gap: 1em;
+}
+.prod-alt-pics{
+    grid-area: prod-alt-pics;
+    display: grid;
+    gap: 1em;
+}
+.prod-alt-pics img{
+    border: 1px solid white;
+    width: 5em;
+}
+.prod-main-pic{
+    grid-area: prod-main-pic;
+}
+
+.prod-summary{
+    grid-area: prod-details;
+}
+@media only screen and (min-width: 992px){
+    
+}
