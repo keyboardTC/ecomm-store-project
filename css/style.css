@@ -135,9 +135,9 @@ main{
 /* ============== start media queries ============*/
 
 @media only screen and (min-width: 992px){
-    /* body{
+    body{
         background: #4e4237 url(../img/wine-1-9.jpg) center top repeat;
-    } */
+    }
     .nav-toggle{
         display: none;
     }
@@ -149,11 +149,13 @@ main{
         padding-bottom: 2em;
         display: grid;
         grid-template-columns:1fr 2fr;
+        /* box-shadow:5px 20px 40px 10px rgb(112, 112, 112);   */
         grid-template-areas:
         "sidebar results" ;
         /* column-gap: 2em; */
     }
     .page-header{
+        box-shadow:5px 20px 50px 15px rgb(112, 112, 112);  
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         grid-template-rows: auto;
@@ -194,6 +196,7 @@ main{
         margin:0em auto;
     }
     .page-footer{
+        box-shadow:5px 20px 50px 15px rgb(112, 112, 112);  
         margin: 0 -.5em -.5em -.5em;
         background-color: var(--secondary-on);
     }
