@@ -15,7 +15,7 @@ html {
     --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 body {
-	margin: 1em;
+	/* margin: 1em; */
 	background-color: var(--global-color-primary);
 	font-family: var(--font-family-monospace);
 	color: var(--prim-text-color);
@@ -42,11 +42,11 @@ ul, ol, dl {
 li > ul, li > ol {
 	padding-left: 2.5em;
 } */
-/*
+
 input, button {
 	margin: 0;
 	font: inherit;
-} */
+}
 /*
 fieldset {
 	display: flex;

@@ -5,22 +5,19 @@
 .page-header .fa {
 	color:var(--alt-color);
 }
-.product{
+.main{
 	margin-bottom: 3em;
 }
 header.page-header{
     display: grid;
     text-align: center;
 }
-.header-container {
+/* .header-container {
     display: flex;
     justify-content: space-between;
     margin: 0em 0 1em 0;
-}
-.header-wrapper{
-    display: grid;
+} */
 
-}
 .navigation, .search,  .m-hide{
     display: none;
 }
@@ -53,7 +50,7 @@ label.rating{
     /* background-color: green; */
 }
 .logo{
-    margin:0 auto;
+padding: 1em; 
 }
 .page-title{
 	background-color: var(--global-color-secondary);
@@ -70,6 +67,10 @@ main{
     gap: 1em;
     justify-content: center;
 }
+.product{
+    margin-bottom: 3em;
+}
+
 .iterm-properties{
     display: flex;
     justify-content:flex-start;
@@ -107,7 +108,6 @@ main{
 }
 .footer-links div ol li {
     margin-bottom: .7em;
-    color: lawngreen;
 }
 .legal, .social{
     display: inline-flex;
@@ -135,10 +135,14 @@ main{
 /* ============== start media queries ============*/
 
 @media only screen and (min-width: 992px){
+    /* body{
+        background: #4e4237 url(../img/wine-1-9.jpg) center top repeat;
+    } */
     .nav-toggle{
         display: none;
     }
     main{
+        background-color: var(--global-color-primary);
         padding:0;
         width:76em;
         margin:0em auto;
@@ -149,13 +153,48 @@ main{
         "sidebar results" ;
         /* column-gap: 2em; */
     }
+    .page-header{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        grid-template-rows: auto;
+        grid-template-areas: 
+        "search logo cart"
+        "menu menu menu"
+        "page-title page-title page-title";
+    }
+    .search-bar{
+        display: flex;
+        justify-content: flex-start;
+        align-self: flex-end;
+        grid-area: search;
+    }
+    .top-cart{
+        grid-area: cart;
+        display: flex;
+        justify-content: flex-end;
+        align-self: flex-end;
+    }
+    .logo{
+        grid-area: logo;
+        margin-left: 7em;
+        display: inline-flex;
+        justify-content: flex-end;
+
+    }
+    .navigation{
+        grid-area: menu;
+        margin: 2em 0 0 0;
+    }
+    .page-title{
+        grid-area: page-title;
+    }
     .page-header, .main-footer{
         padding:2em;
         width:76em;
         margin:0em auto;
     }
     .page-footer{
-        margin: 0 -1em 0 -1em;
+        margin: 0 -.5em -.5em -.5em;
         background-color: var(--secondary-on);
     }
     .navigation, .m-hide, .search{
@@ -166,7 +205,7 @@ main{
     }
     .sidebar{
         margin-top: 1em;
-        margin-left: 6em;
+        /* margin-left: 6em; */
         width: 20em;
     }
     .navigation ul{
@@ -184,7 +223,7 @@ main{
     }
     .navigation a{
         display:inline-block;
-        padding:1em 5em;
+        padding:1em 4em;
         font-size: 1.3em;
     }
     .navigation ul ul {
@@ -226,5 +265,17 @@ main{
     .footer-about-us{
         width: 30em;
     }
-
+    .find{
+        border: 0px;
+        align-self: flex-start;
+        /* height: 2.5em; */
+    }
+    .fa-search{
+        padding: 0;
+        border: 0;
+        /* background: var(--global-color-primary); */
+    }
+    .search{
+        background-color: white;
+    }
 }

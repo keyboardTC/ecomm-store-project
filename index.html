@@ -14,9 +14,8 @@
   </head>
   <body>
     <header class="page-header">
-      <div class="header-wrapper">
-        
-        <div class="header-container">
+
+        <div class="search-bar">
           <!-- Navigation menu and toggle button (non-functional) -->
           <button type="button" class="nav-toggle">
             <!-- <span class="material-icons">menu</span> -->
@@ -24,20 +23,29 @@
           </button>          
           <!-- Search for a product (non-functional) -->
           <form class="search">
-            <label>Search
-              <input type="search" name="find" id="find">
+            <label>
+              <input type="search" name="find" id="find" placeholder="Search for Products..." class="find">
             </label>
-            <button type="button"><i class="fas fa-search"></i></button>
+            <button type="button"><i class="fas fa-search fa-2x"></i></button>
           </form>  
-          <!-- LOGO -->
-          <a href="index.html" class="logo">WINE HUB<!-- Site logo --></a>
+        </div>
+
+        <div class="top-cart">
           <!-- Additional links -->
           <ul class="header-cart">
+            <li><a href="#"><i class="fas fa-user-circle fa-2x"></i></a></li>
             <li><a href="#"><i class="fa far fa-heart fa-2x"></i></a></li>
             <li><a href="#"><i class="fa fas fa-shopping-cart fa-2x" aria-label="Items in your cart"></i></a></li>
           </ul>
         </div>
-        
+
+        <div class="logo">
+          <!-- LOGO -->
+          <a href="/" rel="home" class="site-logo">
+            <img src="img/winHubLogo1.png" alt="WINE HUB.">
+            <!-- Site logo --></a>
+        </div>
+
         <!-- Navigation menu -->      
         <nav aria-label="Primary" class="navigation">
           <ul class="menu">
@@ -53,7 +61,6 @@
             <li><a href="#">Contact</a></li>
           </ul>
         </nav>
-      </div>
 
       <!-- Page Title -->
       <div class="page-title">
@@ -396,5 +403,6 @@
       </div>
     </footer>
 
+    <!-- <script src="./js/script.js"></script> -->
   </body>
 </html>
