@@ -53,9 +53,9 @@ label.rating{
 padding: 1em; 
 }
 .page-title{
-    background-color: var(--global-color-primary);
+    background-color: var(--global-color-secondary);
 	margin: 0 -1em;
-	/* margin-bottom: 2em; */
+	margin-bottom: 2em;
 }
 main{
     display: grid;
@@ -70,6 +70,7 @@ main{
 .product{
     margin-bottom: 3em;
 }
+
 
 .iterm-properties{
     display: flex;
@@ -156,7 +157,6 @@ main{
     }
     .page-header{
         box-shadow:0px 60px 50px 5px rgb(0, 0, 0);  
-        /* background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/dark-wine-wallpaper-preview.jpg); */
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         grid-template-rows: auto;
@@ -182,7 +182,6 @@ main{
         margin-left: 7em;
         display: inline-flex;
         justify-content: flex-end;
-
     }
     .navigation{
         grid-area: menu;
@@ -284,4 +283,22 @@ main{
     .search{
         background-color: white;
     }
+.product{
+    display: flex;
+    justify-content: space-between;
+    gap: 2em;
+}
+.product .prod-details{
+    /* background-color: red; */
+    align-self: flex-start;
+}
+.prod-details h3{
+    margin-top: 0;;
+}
+    .product img{
+        width: 250px;
+        height: 250px;
+    }
+
+
 }
