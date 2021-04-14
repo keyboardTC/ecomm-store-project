@@ -2,46 +2,38 @@
 .rating .material-icons, dd>span.material-icons {
 	color:#E9BE0F;
 }
+/* <============== Header styling ============> */
 .page-header .fa {
 	color:var(--alt-color);
 }
-.main{
-	margin-bottom: 3em;
-}
-header.page-header{
+.page-header{
     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "menu-toggle cart"
+    "logo logo"
+    "pageTitle pageTitle";
     text-align: center;
 }
-/* .header-container {
+.nav-toggle{
+    grid-area: menu-toggle;
+    width: 3em;
+    justify-content: flex-start;
+}
+.top-cart{
+    grid-area: cart;
     display: flex;
-    justify-content: space-between;
-    margin: 0em 0 1em 0;
-} */
-
+    justify-content: flex-end;
+    margin-right: 2em;
+}
+.logo{
+    grid-area: logo;
+    justify-self: center
+}
 .navigation, .search,  .m-hide{
     display: none;
 }
-.rating {
-    display: flex; 
-    justify-content: space-between; 
-    margin-bottom: .5em;
-}
-/* <======== side bar styling Start ============> */
-label.rating{
-    justify-content: flex-start;
-}
-/* <======== side bar styling ends ============> */
-
-.filter-toggle{
-    display: flex;
-    gap: 1em;
-    justify-content: center; 
-}
-.filter-toggle h2{
-    margin: .2em 0 0 0 ;
-    font-size: 1.2em;
-}
-
 .header-cart, .prodcut-list-cart{
     display: flex;
     flex-wrap: wrap;
@@ -50,16 +42,24 @@ label.rating{
     /* background-color: green; */
 }
 .logo{
-padding: 1em; 
+    width:200px;
+    justify-self: center
 }
 .page-title{
+    grid-area: pageTitle;
     background-color: var(--global-color-secondary);
-	margin: 0 -1em;
+	/* margin: 0 -1em; */
 	margin-bottom: 2em;
 }
+
+/* <============= Main styling  ============> */
 main{
     display: grid;
+    padding: 0 2em 2em 2em;
     margin-bottom: 2em;
+}
+.results{
+    padding-top: 2em;
 }
 .pages, .iterm-properties, .iterm-properties fieldset> ol, .iterm-properties fieldset> ul{
     display: flex;
@@ -98,11 +98,31 @@ main{
 .add-to-fav {
     background-color: var(--global-color-primary);
 }
+label.rating{
+    justify-content: flex-start;
+}
+.rating {
+    display: flex; 
+    justify-content: space-between; 
+    margin-bottom: .5em;
+}
+/* <================ side bar styling ============> */
+
+.filter-toggle{
+    display: flex;
+    gap: 1em;
+    justify-content: center; 
+}
+.filter-toggle h2{
+    margin: .2em 0 0 0 ;
+    font-size: 1.2em;
+}
+
+/* <==================== footer styling ============> */
 .main-footer{
     background-color: var(--secondary-on);
-    margin: 0 -1em -1em -1em;
+    /* margin: 0 -1em -1em -1em; */
     padding: 2em;
-    /* display: flex; */
 }
 .footer-links{
     margin-bottom: 4em;
@@ -134,42 +154,20 @@ main{
 }
 
 /* ============== start media queries ============*/
-
 @media only screen and (min-width: 992px){
     body{
         background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/background-wood.jpg);
     }
-    .nav-toggle{
-        display: none;
-    }
-    main{
-        box-shadow:0px 60px 50px 5px rgb(0, 0, 0);  
-        background-color: var(--global-color-primary);
-        padding:3em;
-        width:76em;
-        margin:0em auto;
-        padding-bottom: 2em;
-        display: grid;
-        grid-template-columns:1fr 2fr;
-        grid-template-areas:
-        "sidebar results" ;
-        /* column-gap: 2em; */
-    }
+
+    /* <================= Header styling ============> */
     .page-header{
-        box-shadow:0px 60px 50px 5px rgb(0, 0, 0);  
+        box-shadow:5px 50px 50px 5px rgb(0, 0, 0);  
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        grid-template-rows: auto;
         grid-template-areas: 
         "search logo cart"
         "menu menu menu"
         "page-title page-title page-title";
-    }
-    .search-bar{
-        display: flex;
-        justify-content: flex-start;
-        align-self: flex-end;
-        grid-area: search;
     }
     .top-cart{
         grid-area: cart;
@@ -179,39 +177,14 @@ main{
     }
     .logo{
         grid-area: logo;
-        margin-left: 7em;
-        display: inline-flex;
-        justify-content: flex-end;
+        justify-self: center
     }
     .navigation{
         grid-area: menu;
         margin: 2em 0 0 0;
     }
-    .page-title{
-        grid-area: page-title;
-    }
-    .page-header, .main-footer{
-        padding:2em;
-        width:76em;
-        margin:0em auto;
-    }
-    .page-footer{
-        margin: 0 -.5em -.5em -.5em;
-        background-color: var(--secondary-on);
-    }
-    .navigation, .m-hide, .search{
-        display: block;
-    }
-    .sidebar, .results{
-        padding: 0 1em;
-    }
-    .results{
-        margin-left: -4em;
-    }
-    .sidebar{
-        margin-top: 1em;
-        /* margin-left: 6em; */
-        width: 20em;
+    .nav-toggle{
+        display: none;
     }
     .navigation ul{
         display: flex;
@@ -260,15 +233,19 @@ main{
         position: absolute;
         display:block;     /* Show the sub menus */
     }
+    .navigation, .m-hide, .search{
+        display: block;
+    }
     .menu>li:hover {
         background-color:var(--secondary-on);
     }
-    .footer-links{
-        display: flex;
-        justify-content: space-evenly;
+    .page-title{
+        grid-area: page-title;
     }
-    .footer-about-us{
-        width: 30em;
+    .page-header, .main-footer{
+        padding:2em;
+        width:76em;
+        margin:0em auto;
     }
     .find{
         border: 0px;
@@ -283,22 +260,64 @@ main{
     .search{
         background-color: white;
     }
-.product{
-    display: flex;
-    justify-content: space-between;
-    gap: 2em;
-}
-.product .prod-details{
-    /* background-color: red; */
-    align-self: flex-start;
-}
-.prod-details h3{
-    margin-top: 0;;
-}
+
+    /* <================== Main styling =================> */
+    main{
+        box-shadow:5px 50px 50px 5px rgb(0, 0, 0);  
+        background-color: var(--global-color-primary);
+        padding:3em;
+        width:76em;
+        margin:0em auto;
+        padding-bottom: 2em;
+        display: grid;
+        grid-template-columns:1fr 2fr;
+        grid-template-areas:
+        "sidebar results" ;
+        /* column-gap: 2em; */
+    }
+    .search-bar{
+        display: flex;
+        justify-content: flex-start;
+        align-self: flex-end;
+        grid-area: search;
+    }
+    .sidebar, .results{
+        padding: 0 1em;
+    }
+    .results{
+        margin-left: -4em;
+    }
+    .product{
+        display: flex;
+        justify-content: space-between;
+        gap: 2em;
+    }
+    .product .prod-details{
+        /* background-color: red; */
+        align-self: flex-start;
+    }
+    .prod-details h3{
+        margin-top: 0;;
+    }
     .product img{
         width: 250px;
         height: 250px;
     }
 
-
+    /* <================== Footer styling =================> */
+    .page-footer{
+        background-color: var(--secondary-on);
+    }
+    .sidebar{
+        margin-top: 1em;
+        width: 20em;
+    }
+    .footer-links{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .footer-about-us{
+        width: 30em;
+    }
+    
 }

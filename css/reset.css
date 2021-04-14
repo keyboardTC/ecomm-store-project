@@ -15,7 +15,7 @@ html {
     --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
 body {
-	/* margin: 1em; */
+	margin: 0px;
 	background-color: var(--global-color-primary);
 	font-family: var(--font-family-monospace);
 	color: var(--prim-text-color);
