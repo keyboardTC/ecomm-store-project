@@ -14,12 +14,15 @@
     "menu-toggle cart"
     "logo logo"
     "pageTitle pageTitle";
-    text-align: center;
+    /* text-align: center; */
 }
 .nav-toggle{
     grid-area: menu-toggle;
     width: 3em;
-    justify-content: flex-start;
+    /* position: fixed; */
+    /* float: right; */
+    /* justify-content: flex-start; */
+    /* justify-self: flex-start; */
 }
 .top-cart{
     grid-area: cart;
@@ -48,8 +51,8 @@
 .page-title{
     grid-area: pageTitle;
     background-color: var(--global-color-secondary);
-	/* margin: 0 -1em; */
-	margin-bottom: 2em;
+    text-align: center;
+	margin-bottom: 1em;
 }
 
 /* <============= Main styling  ============> */

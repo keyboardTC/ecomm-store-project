@@ -21,21 +21,21 @@
           <!-- Navigation menu and toggle button (non-functional) -->
           <button type="button" class="nav-toggle">
             <!-- <span class="material-icons">menu</span> -->
-            <i class="fas fa-bars fa-2x"></i>
+            <i class="fa fa-bars fa-2x"></i>
           </button>          
           <!-- Search for a product (non-functional) -->
           <form class="search">
             <label>
               <input type="search" name="find" id="find" placeholder="Search for Products..." class="find">
             </label>
-            <button type="button"><i class="fas fa-search fa-2x"></i></button>
+            <button type="button"><i class="fa fa-search fa-2x"></i></button>
           </form>  
         </div>
 
         <div class="top-cart">
           <!-- Additional links -->
           <ul class="header-cart">
-            <li><a href="#"><i class="fas fa-user-circle fa-2x"></i></a></li>
+            <li><a href="#"><i class="fa fa-user-circle fa-2x"></i></a></li>
             <li><a href="#"><i class="fa far fa-heart fa-2x"></i></a></li>
             <li><a href="#"><i class="fa fas fa-shopping-cart fa-2x" aria-label="Items in your cart"></i></a></li>
           </ul>
@@ -71,48 +71,112 @@
     </header>
 
 <!--------- Main content ---------->
-<main class="products">
+<main class="main-product">
+
+    <!-- MAIN PRODUCT SECTION -->
     <article class="single-product">
-        <section class="prod-alt-pics">
-            <img src="img/5b.jpg" alt="Product Image">
-            <img src="img/5c.jpg" alt="Product Image">
-            <img src="img/3c.jpg" alt="Product Image">
-        </section>
-        <section class="prod-main-pic">
-            <img src="img/1b.jpg" alt="Product Image">
-        </section>
-        <section class="prod-summary">
-            <div class="prod-details">
-                <h3>Product Name</h3>
-                <p>Here is a shot of this product that might entice a user to click and add it to their cart. <a href="#">see more</a></p>
-                <dl class="rating">
-                  <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
-                  <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
-                </dl>
-    
-                <form class="iterm-properties">
-                  <fieldset>
-                    <legend>Colours</legend>
-                    <ul>
-                      <li><label><input type="radio" name="colour" value="r"> Red</label></li>
-                      <li><label><input type="radio" name="colour" value="r"> Red</label></li>
-                    </ul>
-                  </fieldset>
-                  <fieldset>
-                    <legend>Sizes</legend>
-                    <ol>
-                      <li><label><input type="radio" name="size" value="m"> M</label></li>
-                      <li><label><input type="radio" name="size" value="m"> M</label></li>
-                    </ol>
-                  </fieldset>
-                </form>
-                <div class="prodcut-list-cart">
-                  <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
-                  <button type="button" class="add-to-fav"><i class="fas far fa-heart "></i></button>
-                </div>
+      <section class="prod-images">
+        <img src="img/5b.jpg" alt="Product Image1"class="pic01">
+        <img src="img/5c.jpg" alt="Product Image2"class="pic02">
+        <img src="img/3c.jpg" alt="Product Image3"class="pic03">
+        <div class="prod-main-pic">
+          <img src="img/1b.jpg" alt="Product Image">
+        </div>
+      </section>
+
+      <section class="prod-summary">
+          <div class="prod-details">
+              <h3>Product Name</h3>
+              <p>Here is a shot of this product that might entice a user to click and add it to their cart. <a href="#">see more</a></p>
+              <dl class="rating">
+                <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
+                <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+              </dl>
+  
+              <div class="shipping-info">
+                <h4>Shipping Type: Standard Ground</h4>
+                <h4>Cost: Free</h4>
+                <h4>Estimated Delivery Time: Product will delivery in 4-6 business hours</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit asperiores excepturi assumenda quas doloribus laborum unde officiis. Consequuntur saepe laudantium, eum inventore similique autem expedita numquam odit. Aliquam, pariatur tempora.</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit asperiores excepturi assumenda quas doloribus laborum unde officiis. Consequuntur saepe laudantium, eum inventore similique autem expedita numquam odit. Aliquam, pariatur tempora.</p>
               </div>
-        </section>
+
+              <form class="iterm-properties">
+                <fieldset>
+                  <legend>Colours</legend>
+                  <ul>
+                    <li><label><input type="radio" name="colour" value="r"> Red</label></li>
+                    <li><label><input type="radio" name="colour" value="r"> Red</label></li>
+                  </ul>
+                </fieldset>
+                <fieldset>
+                  <legend>Sizes</legend>
+                  <ol>
+                    <li><label><input type="radio" name="size" value="m"> M</label></li>
+                    <li><label><input type="radio" name="size" value="m"> M</label></li>
+                  </ol>
+                </fieldset>
+              </form>
+              <div class="prodcut-list-cart">
+                <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
+                <button type="button" class="add-to-fav"><i class="fa far fa-heart "></i></button>
+              </div>
+            </div>
+            <div class="share-icons">
+              <h3>SHARE</h3>
+              <img src="/img/facebook (1).png" alt="Facebook-icon" class="social-icon-share">
+              <img src="/img/google-plus.png" alt="Google+-icon" class="social-icon-share">
+              <img src="/img/instagram (2).png" alt="instagram-icon" class="social-icon-share">
+              <img src="/img/twitter.png" alt="Twitter-icon" class="social-icon-share">
+              <img src="/img/pinterest.png" alt="Pinterest-icon" class="social-icon-share">
+            </div>
+      </section>
     </article>
+
+    <!-- PRODUCT DESCRIPTION SECTION -->
+    <section class="prod-description">
+        <h3>description</h3>
+        <div class="detauls">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ducimus quas facilis est doloremque, in laudantium fuga iusto! Quasi repudiandae inventore adipisci illum est, enim esse facere minus sequi eos!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ducimus quas facilis est doloremque, in laudantium fuga iusto! Quasi repudiandae inventore adipisci illum est, enim esse facere minus sequi eos!</p>
+        </div>
+    </section>
+
+    <!-- RELATED PRODUCT SECTION -->
+    <section class="related-prod">
+        <h3>RELATED PRODUCTS</h3>
+        <div class="other-prods">
+            <div class="related-prod01">
+              <img src="/img/5a.jpg" alt="">
+              <p>Category</p>
+              <h4 class="related-pro-name">Product Name</h4>
+              <dl class="rating">
+                <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
+                <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+              </dl>
+            </div>
+            <div class="related-prod01">
+              <img src="/img/5a.jpg" alt="">
+              <p>Category</p>
+              <h4 class="related-pro-name">Product Name</h4>
+              <dl class="rating">
+                <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
+                <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+              </dl>
+            </div>
+            <div class="related-prod01">
+              <img src="/img/5a.jpg" alt="">
+              <p>Category</p>
+              <h4 class="related-pro-name">Product Name</h4>
+              <dl class="rating">
+                <data value="39"><del>$50.00</del> <ins>$39.00</ins></data>
+                <dd><p>Rating : 4.4</p> <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_half</span></dd>
+              </dl>
+            </div>
+
+        </div>
+    </section>
+    
 </main>
 
 <!--------- Footer content ---------->
