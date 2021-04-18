@@ -16,6 +16,9 @@
     border-top: 1px solid var(--alt-text-color);
     padding-top: 1em;
 }
+.share-icons a{
+    align-self: center;
+}
 .social-icon-share{
     width: 30px;
     height: 30px;
