@@ -44,6 +44,13 @@
     border-top: 1px solid var(--alt-text-color);
     padding-top: 2em;
 }
+.altpic {
+    opacity: 0.6; 
+    cursor: pointer; 
+}
+.altpic:hover {
+    opacity: 1;
+  }
 
 /* MEDIA QUERIES */
 @media only screen and (min-width: 992px){

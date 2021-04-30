@@ -16,3 +16,8 @@ Read and complete the steps in the following two documents:
 - The live url must be added to appropriate field of the repository's "About" (top-right)
 - Both urls (code, and live) will be collected prior to the first deliverable being due
 - See the [project overview](https://www.notion.so/juneate/Project-Webstore-28443f753b344d60b0176a24e14f17c9) for details on submissions, as well as a form
+
+![Lighthouse report](img/home-lighthouse.jpg)
+![Lighthouse report](img/homepage-mobile.jpg)
+![Lighthouse report](img/product-page-desktop.jpg)
+![Lighthouse report](img/product-page-mobile.jpg)
