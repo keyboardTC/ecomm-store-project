@@ -21,6 +21,36 @@ const products = [
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
     prod_prices: [50.00, 39.00],
     prod_rating: 4.4,
+    prod_colour: ['Red', 'Dessert'],
+    prod_weight: [500, 200]
+  },
+  {
+    prod_img: '1b.jpg',
+    prod_link: 'product-page.html',
+    prod_name: 'Product2',
+    prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
+    prod_prices: [50.00, 39.00],
+    prod_rating: 4.4,
+    prod_colour: ['Red', 'Rose'],
+    prod_weight: [100, 800]
+  },
+  {
+    prod_img: '1b.jpg',
+    prod_link: 'product-page.html',
+    prod_name: 'Product3',
+    prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
+    prod_prices: [50.00, 39.00],
+    prod_rating: 4.4,
+    prod_colour: ['Dessert', 'White'],
+    prod_weight: [100, 200, 800]
+  },
+  {
+    prod_img: '1b.jpg',
+    prod_link: 'product-page.html',
+    prod_name: 'Product4',
+    prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
+    prod_prices: [50.00, 39.00],
+    prod_rating: 4.4,
     prod_colour: ['Red', 'White'],
     prod_weight: [100, 200]
   }
@@ -33,8 +63,10 @@ const products_table = document.querySelector('#prod');
 // Modify the new element, create the templete for all product.
 products.forEach((prod) => {
 
+
   // Create article element to hold each product
   const article_item = document.createElement('article')
+  const the_weight = prod.prod_weight
 
   // Adding class name product to the article created
   article_item.classList.add('product') 
@@ -59,7 +91,7 @@ products.forEach((prod) => {
         </fieldset>
         <fieldset>
           <legend>Weight</legend>
-          <ol>
+          <ol class="weight">
             <li><label><input type="radio" name="size" value="m">${prod.prod_weight[0]}</label></li>
             <li><label><input type="radio" name="size" value="m">${prod.prod_weight[1]}</label></li>
           </ol>
@@ -67,16 +99,30 @@ products.forEach((prod) => {
       </form>
       <div class="prodcut-list-cart">
         <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
-        <button type="button" class="add-to-fav"><i class="fa far fa-heart "></i></button>
+        <button type="button" class="add-to-fav"><i class="fa far fa-heart" name="Whist List"></i></button>
       </div>
     </div>
   `
+
+
   // Adding the article element to the result section element
   products_table.appendChild(article_item);
 
-  console.log(prod.prod_img)
+
+  // const products_weight = document.querySelectorAll('weight')
+  // console.log(products_weight)
+  // the_weight.forEach((weight)=>{
+  //   const weight_list = document.createElement(`li`)
+  //   weight_list.innerHTML = `
+  //     <label><input type="radio" name="size" value="m">${weight}</label>
+  //   `
+  //   products_weight[x].appendChild(weight_list)
+  //   console.log(weight)
+  //   console.log(`done`)
+  // }) 
 
   
+
 })
 
 

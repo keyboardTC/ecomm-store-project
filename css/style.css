@@ -158,6 +158,9 @@ label.rating{
     padding-bottom: 1.5em;
     border-bottom: 1px solid var(--alt-text-color);
 }
+.hide {
+    display: none;
+}
 
 /* ============== start media queries ============*/
 @media only screen and (min-width: 992px){
