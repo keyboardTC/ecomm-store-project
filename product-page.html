@@ -14,60 +14,59 @@
   </head>
   <body>
 <!--------- Header content ---------->      
-    <header class="page-header">
+<header class="page-header">
+  <!-- Navigation menu and toggle button (non-functional) -->
+  <button type="button" class="nav-toggle" name="menu button">
+    <!-- <span class="material-icons">menu</span> -->
+    <i class="fa fa-bars fa-2x"></i>
+  </button>   
+  <div class="search-bar m-hide">       
+    <!-- Search for a product (non-functional) -->
+    <form class="search">
+      <label>
+        <input type="search" name="find" id="find" placeholder="Search for Products..." class="find">
+      </label>
+      <button type="button"><i class="fa fa-search fa-2x"></i></button>
+    </form>  
+  </div>
 
-        <div class="search-bar">
-          <!-- Navigation menu and toggle button (non-functional) -->
-          <button type="button" class="nav-toggle">
-            <!-- <span class="material-icons">menu</span> -->
-            <i class="fa fa-bars fa-2x"></i>
-          </button>          
-          <!-- Search for a product (non-functional) -->
-          <form class="search">
-            <label>
-              <input type="search" name="find" id="find" placeholder="Search for Products..." class="find">
-            </label>
-            <button type="button"><i class="fa fa-search fa-2x"></i></button>
-          </form>  
-        </div>
+  <div class="top-cart">
+    <!-- Additional links -->
+    <ul class="header-cart">
+      <li><a href="#"><i class="fa fa-user-circle fa-2x"></i></a></li>
+      <li><a href="#"><i class="fa far fa-heart fa-2x"></i></a></li>
+      <li><a href="#"><i class="fa fas fa-shopping-cart fa-2x" aria-label="Items in your cart"></i></a></li>
+    </ul>
+  </div>
 
-        <div class="top-cart">
-          <!-- Additional links -->
-          <ul class="header-cart">
-            <li><a href="#"><i class="fa fa-user-circle fa-2x"></i></a></li>
-            <li><a href="#"><i class="fa far fa-heart fa-2x"></i></a></li>
-            <li><a href="#"><i class="fa fas fa-shopping-cart fa-2x" aria-label="Items in your cart"></i></a></li>
-          </ul>
-        </div>
+  <!-- LOGO -->
+  <div class="logo">
+    <a href="./index.html" rel="home" class="site-logo">
+      <img src="img/winHubLogo1.png" alt="WINE HUB.">
+      <!-- Site logo --></a>
+  </div>
 
-        <div class="logo">
-          <!-- LOGO -->
-          <a href="./index.html" rel="home" class="site-logo">
-            <img src="img/winHubLogo1.png" alt="WINE HUB.">
-            <!-- Site logo --></a>
-        </div>
+  <!-- Navigation menu -->      
+  <nav aria-label="Primary" class="navigation  m-hide">
+    <ul class="menu">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">Shop</a>
+        <ul class="submenu">
+          <li><a href="#">Dessert Wine</a></li>
+          <li><a href="#">Red Wine</a></li>
+          <li><a href="#">Rose Wine</a></li>
+        </ul>
+      </li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
-        <!-- Navigation menu -->      
-        <nav aria-label="Primary" class="navigation">
-          <ul class="menu">
-            <li><a href="./index.html">HOME</a></li>
-            <li><a href="#">Shop</a>
-              <ul class="submenu">
-                <li><a href="#">Dessert Wine</a></li>
-                <li><a href="#">Red Wine</a></li>
-                <li><a href="#">Rose Wine</a></li>
-              </ul>
-            </li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
-        </nav>
-
-      <!-- Page Title -->
-      <div class="page-title">
-        <h2>PAGE TITLE</h2>
-      </div>
-    </header>
+<!-- Page Title -->
+<div class="page-title">
+  <h2>PAGE TITLE</h2>
+</div>
+</header>
 
 <!--------- Main content ---------->
 <main class="main-product">
