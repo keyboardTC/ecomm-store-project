@@ -1,3 +1,4 @@
+//  Stict menu on scrolling
 window.onscroll = function() {myFunction()};
 
 var navbar = document.querySelector('.menu');
@@ -10,6 +11,33 @@ function myFunction() {
     navbar.classList.remove("sticky");
   }
 }
+
+//  Toggle the product filters to show when button is click
+const filt_toggle = document.querySelector(`.filt-toggle`)
+const filters = document.querySelector(`.filters`)
+
+filt_toggle.addEventListener('click',function (event) {
+  if (filters.classList.contains(`m-hide`)) {
+    filters.classList.remove('m-hide')
+  } else {
+    filters.classList.add('m-hide')
+  }
+})
+
+//  Toggle the product filters to show when button is click
+const nav_toggle = document.querySelector(`.nav-toggle`)
+const navigation = document.querySelector(`.navigation`)
+nav_toggle.addEventListener('click',function (event) {
+  if (navigation.classList.contains(`m-hide`)) {
+    navigation.classList.remove('m-hide')
+    navigation.classList.add('nav_style')
+  } else {
+    navigation.classList.remove('nav_style')
+    navigation.classList.add('m-hide')
+  }
+})
+
+
 
 //========================== Shop page=================== //
 
@@ -67,9 +95,6 @@ const productsAr = [
 
 ]
 
-// cat = categories
-// prod_cat = product categories
-
 // Select the element all products
 const products_table = document.querySelector('#prod');
 
@@ -77,9 +102,7 @@ let the_ProductsAr = productsAr
 
 let previous_ProductsAr = []
 
-
 // Modify the new element, create the templete for all product.
-
 const setProductsTable = function(product_array){
 
   products_table.innerHTML = ``
@@ -157,7 +180,7 @@ const setProductsTable = function(product_array){
 //  Sending the Product array to the set product method to redare the template
 setProductsTable(the_ProductsAr)
 
-
+//  filtering by category/colour of wine
 const filter_cat = document.querySelectorAll(`[name="filt_cat"]`)
 const filter_weight = document.querySelectorAll(`[name="filt_weight"]`)
 
@@ -207,23 +230,19 @@ filter_cat.forEach((cat)=>{
   })
 })
 
-filter_weight.forEach((wght)=>{
+// filter_weight.forEach((wght)=>{
+//   wght.addEventListener('click', function(event){
+//     const weight_value = event.target.value
+//     if (wght.checked) {
+//      const products_displaced = document.querySelectorAll(`[name="size"]`)
+//      console.log(products_displaced)
+//    }else{
+//      console.log("Unchecked")
+//      console.log(filteredProductsAr)
+//      the_ProductsAr =  previous_ProductsAr
+//      setProductsTable(previous_ProductsAr)
+//    }
+//   })
 
-  wght.addEventListener('click', function(event){
-  
-    const weight_value = event.target.value
-
-    if (wght.checked) {
-     const products_displaced = document.querySelectorAll(`[name="size"]`)
-     console.log(products_displaced)
-   }else{
-     console.log("Unchecked")
-     console.log(filteredProductsAr)
-     the_ProductsAr =  previous_ProductsAr
-     setProductsTable(previous_ProductsAr)
-   }
-
-  })
-
-// innerHTML
-})
+// // innerHTML
+// })

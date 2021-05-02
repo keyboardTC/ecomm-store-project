@@ -22,6 +22,7 @@ a:hover, .fa:hover{
 .nav-toggle{
     grid-area: menu-toggle;
     width: 3em;
+    margin: 1em 0px 0px 1em;
     /* position: fixed; */
     /* float: right; */
     /* justify-content: flex-start; */
@@ -31,13 +32,13 @@ a:hover, .fa:hover{
     grid-area: cart;
     display: flex;
     justify-content: flex-end;
-    margin-right: 2em;
+    margin: 1em 1em 0px 0em;
 }
 .logo{
     grid-area: logo;
     justify-self: center
 }
-.navigation, .search,  .m-hide{
+.m-hide{
     display: none;
 }
 .header-cart, .prodcut-list-cart{
@@ -57,6 +58,58 @@ a:hover, .fa:hover{
     text-align: center;
 	margin-bottom: 1em;
 }
+.nav_style{
+    background-color:var(--global-color-primary);
+    padding: 2em;
+    position: absolute;
+    top: 8.6em;
+    width: 100%;
+}
+.navigation a{
+    display:inline-block;
+    padding:1em 4em;
+    font-size: 1.3em;
+}
+.navigation>ul>li{
+    border:1px solid #ccc;
+    border-width:1px 0;
+    text-align:center;
+}
+
+.navigation ul li:active,  .navigation ul li:hover{
+    background-color : var(--secondary-on);
+}
+.navigation ul ul {
+    display:none;
+}
+.navigation ul ul li {
+    left:auto;  /*resets the left:50% on the parent li */
+    margin:0; /* Reset the 1px margin from the top menu */
+    clear:left;
+    width:100%;
+}
+.navigation ul ul li a,
+.navigation ul li.active li a,
+.navigation ul li:hover ul li a{
+    font-size:1em;
+    font-weight:normal; /* resets the bold set for the top level menu items */
+    line-height:1.4em; /* overwrite line-height value from top menu */
+}
+.navigation ul ul li a:hover,
+.navigation ul li.active ul li a:hover,
+.navigation ul li:hover ul li a:hover {
+    background:var(--btn-color); /* Sub menu items background colour */
+    color:var(--prim-text-color);
+}
+/* Make the sub menus appear on hover */
+.navigation ul li:hover ul,
+.navigation ul li.hover ul { /* This line is required for IE 6 and below */
+    background-color: var(--secondary-on);
+    position: absolute;
+    left: 30%;
+    display:block;     /* Show the sub menus */
+}
+
 
 /* <============= Main styling  ============> */
 main{
@@ -76,8 +129,6 @@ main{
 .product{
     margin-bottom: 3em;
 }
-
-
 .iterm-properties{
     display: flex;
     justify-content:flex-start;
@@ -120,7 +171,7 @@ label.rating{
     justify-content: center; 
 }
 .filter-toggle h2{
-    margin: .2em 0 0 0 ;
+    margin: .5em 0 0 0 ;
     font-size: 1.2em;
 }
 
@@ -142,7 +193,7 @@ label.rating{
     gap: 1em;
 }
 .legal :nth-child(2) {
-    padding: 0 1em;
+   padding: 0 1em;
    border-left: .2em solid var(--alt-text-color);
    border-right: .2em solid var(--alt-text-color);
  }
@@ -182,17 +233,24 @@ label.rating{
         grid-area: cart;
         display: flex;
         justify-content: flex-end;
-        align-self: flex-end;
+        align-self: end;
     }
     .logo{
         grid-area: logo;
         justify-self: center
     }
+    .nav_style{
+        background-color:var(--global-color-primary);
+        padding: 2em;
+        position: relative;
+        top: 8.6em;
+        width: 100%;
+    }
     .navigation{
         grid-area: menu;
         margin: 2em 0 0 0;
     }
-    .nav-toggle{
+    .filt-toggle, .nav-toggle{
         display: none;
     }
     .navigation ul{
@@ -200,49 +258,12 @@ label.rating{
         justify-content:center;
         /* gap: 4em; */
     }
-    .navigation{
-        border:1px solid #ccc;
-        border-width:1px 0;
-        text-align:center;
-    }
+
     .navigation ul li{
         display:inline;
     }
-    .navigation a{
-        display:inline-block;
-        padding:1em 4em;
-        font-size: 1.3em;
-    }
-    .navigation ul ul {
-        display:none;
-    }
-    .navigation ul ul li {
-        left:auto;  /*resets the left:50% on the parent li */
-        margin:0; /* Reset the 1px margin from the top menu */
-        clear:left;
-        width:100%;
-    }
-    .navigation ul ul li a,
-    .navigation ul li.active li a,
-    .navigation ul li:hover ul li a{
-        font-size:1em;
-        font-weight:normal; /* resets the bold set for the top level menu items */
-        line-height:1.4em; /* overwrite line-height value from top menu */
-    }
-    .navigation ul ul li a:hover,
-    .navigation ul li.active ul li a:hover,
-    .navigation ul li:hover ul li a:hover {
-        background:var(--btn-color); /* Sub menu items background colour */
-        color:var(--prim-text-color);
-    }
-    /* Make the sub menus appear on hover */
-    .navigation ul li:hover ul,
-    .navigation ul li.hover ul { /* This line is required for IE 6 and below */
-        background-color: var(--secondary-on);
-        position: absolute;
-        display:block;     /* Show the sub menus */
-    }
-    .navigation, .m-hide, .search{
+
+    .m-hide{
         display: block;
     }
     .menu>li:hover {
@@ -261,15 +282,29 @@ label.rating{
         align-self: flex-start;
         /* height: 2.5em; */
     }
-    .fa-search{
-        padding: 0;
-        border: 0;
-        /* background: var(--global-color-primary); */
+    .search {
+        display: flex;
+        /* justify-content: flex-start; */
+        align-self:flex-end;
     }
-    .search{
-        background-color: white;
+    .search-bar{
+        display: flex;
+        /* justify-content: flex-end; */
+        align-self: flex-end;
+        grid-area: search;
     }
-
+    input[type=search]{
+        height: 2.5em;
+        align-self: flex-end;
+}
+    .sticky {
+        position: fixed;
+        background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/background-wood.jpg);
+        left: 0%;
+        top: 0;
+        width: 100%;
+      }
+      
     /* <================== Main styling =================> */
     main{
         box-shadow:5px 50px 50px 5px rgb(0, 0, 0);  
@@ -283,12 +318,6 @@ label.rating{
         grid-template-areas:
         "sidebar results" ;
         /* column-gap: 2em; */
-    }
-    .search-bar{
-        display: flex;
-        justify-content: flex-start;
-        align-self: flex-end;
-        grid-area: search;
     }
     .sidebar, .results{
         padding: 0 1em;
