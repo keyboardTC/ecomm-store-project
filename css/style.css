@@ -269,6 +269,7 @@ label.rating{
     .navigation{
         grid-area: menu;
         margin: 2em 0 0 0;
+        z-index: 1;
     }
     .filt-toggle, .nav-toggle{
         display: none;
