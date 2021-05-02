@@ -125,7 +125,7 @@ const setProductsTable = function(product_array){
   
       let the_w = []
       the_weight.forEach((wght)=>{
-        the_w += `<li><label><input type="radio" name="size" value="m">${wght}</label></li>` 
+        the_w += `<li><label><input type="radio" name="size" value="m">${wght}g</label></li>` 
       })
   
       let the_c = []

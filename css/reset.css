@@ -3,14 +3,14 @@
 }
 html {
 	box-sizing: border-box;
-	--global-color-primary: #222222; 
+	--global-color-primary: #1b1b1b; 
 	--global-color-secondary: #343435;   /* main colour */
 	--alt-color:#ae976f;    /* variant */
 	--prim-text-color: #ffffff;     /* for text or icons */
 	--alt-text-color: #b9b9b9;     /* for text or icons */
 	--secondary-alt: #99ccff;
 	--secondary-on: #131313;
-	--btn-color:#A26858;
+	--btn-color:#8d5849;
 	--font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
@@ -47,14 +47,11 @@ input, button {
 	margin: 0;
 	font: inherit;
 }
-/*
+
 fieldset {
-	display: flex;
-	margin: 0;
-	padding: 0;
-	border: none;
-} */
-/*
+margin-bottom: 1em;
+} 
+
 legend {
 	padding: 0;
 	border: none;

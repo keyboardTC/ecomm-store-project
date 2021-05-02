@@ -175,6 +175,25 @@ label.rating{
     margin: .5em 0 0 0 ;
     font-size: 1.2em;
 }
+.filter-list{
+    display: grid;
+    height: 10em;
+    align-content: space-evenly;
+}
+.filter-list li label {
+    cursor: pointer;
+    display: inline;
+}
+.filter-list li{
+    position: relative;
+    padding: .3em;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/background-wood.jpg);
+}
+.filter-list li input[type=checkbox], .filter-list li input[type=radio]{
+    /* height: 40px; */
+    width: 60px;
+}
+
 
 /* <==================== footer styling ============> */
 .main-footer{
