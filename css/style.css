@@ -64,6 +64,7 @@ a:hover, .fa:hover{
     position: absolute;
     top: 8.6em;
     width: 100%;
+    z-index: 1;
 }
 .navigation a{
     display:inline-block;

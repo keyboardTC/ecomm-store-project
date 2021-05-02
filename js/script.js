@@ -16,18 +16,25 @@ function myFunction() {
 const filt_toggle = document.querySelector(`.filt-toggle`)
 const filters = document.querySelector(`.filters`)
 
-filt_toggle.addEventListener('click',function (event) {
-  if (filters.classList.contains(`m-hide`)) {
-    filters.classList.remove('m-hide')
-  } else {
-    filters.classList.add('m-hide')
-  }
-})
+
+
+try {
+  filt_toggle.addEventListener('click',function () {
+    if (filters.classList.contains(`m-hide`)) {
+      filters.classList.remove('m-hide')
+    } else {
+      filters.classList.add('m-hide')
+    }
+  })
+}
+catch(err) {
+  console.log("Error message: "+err.message)
+}
 
 //  Toggle the product filters to show when button is click
 const nav_toggle = document.querySelector(`.nav-toggle`)
 const navigation = document.querySelector(`.navigation`)
-nav_toggle.addEventListener('click',function (event) {
+nav_toggle.addEventListener('click',function () {
   if (navigation.classList.contains(`m-hide`)) {
     navigation.classList.remove('m-hide')
     navigation.classList.add('nav_style')
@@ -97,84 +104,89 @@ const productsAr = [
 
 // Select the element all products
 const products_table = document.querySelector('#prod');
-
 let the_ProductsAr = productsAr
-
 let previous_ProductsAr = []
+
+
 
 // Modify the new element, create the templete for all product.
 const setProductsTable = function(product_array){
 
-  products_table.innerHTML = ``
-  product_array.forEach((prod) => {
-    
-    // Create article element to hold each product
-    const article_item = document.createElement('article')
-    const the_weight = prod.prod_weight
-    const the_cat = prod.prod_cat
-    const the_rate = prod.prod_rating
-
-
-    let the_w = []
-    the_weight.forEach((wght)=>{
-      the_w += `<li><label><input type="radio" name="size" value="m">${wght}</label></li>` 
-    })
-
-    let the_c = []
-    the_cat.forEach((cat)=>{
-      the_c += `<li><label><input type="radio" name="category" value="r"> ${cat}</label></li>`
-    })
-
-    let the_r = []
-    for (let x = 0; x < 5; x++) {
-      if (the_rate > x) {
-        the_r += ` <span class="material-icons">star</span>`
-      } else {
-        the_r += ` <span class="material-icons">star_border</span>`
+  try {
+    products_table.innerHTML = ``
+    product_array.forEach((prod) => {
+      
+      // Create article element to hold each product
+      const article_item = document.createElement('article')
+      const the_weight = prod.prod_weight
+      const the_cat = prod.prod_cat
+      const the_rate = prod.prod_rating
+  
+  
+      let the_w = []
+      the_weight.forEach((wght)=>{
+        the_w += `<li><label><input type="radio" name="size" value="m">${wght}</label></li>` 
+      })
+  
+      let the_c = []
+      the_cat.forEach((cat)=>{
+        the_c += `<li><label><input type="radio" name="category" value="r"> ${cat}</label></li>`
+      })
+  
+      let the_r = []
+      for (let x = 0; x < 5; x++) {
+        if (the_rate > x) {
+          the_r += ` <span class="material-icons">star</span>`
+        } else {
+          the_r += ` <span class="material-icons">star_border</span>`
+        }
       }
-    }
-
-
   
-    // Adding class name product to the article created
-    article_item.classList.add('product') 
- 
-    article_item.innerHTML = `
-    <img src="img/${prod.prod_img}" alt="${prod.prod_name}">
-    <div class="prod-details">
-        <h3><a href="${prod.prod_link}">${prod.prod_name}</a></h3>
-        <p>${prod.prod_desc} <a href="${prod.prod_link}">see more</a></p>
-        <dl class="rating">
-          <data value="${prod.prod_prices[1]}"><del>$${prod.prod_prices[0]}</del> <ins>$${prod.prod_prices[1]}</ins></data>
-          <dd><p>Rating : ${prod.prod_rating}</p> 
-          ${the_r}
-        </dl>
+  
     
-        <form class="iterm-properties">
-          <fieldset>
-            <legend>Category</legend>
-            <ul>
-               ${the_c}
-            </ul>
-          </fieldset>
-          <fieldset>
-            <legend>Weight in grams</legend>
-            <ol class="weight">
-              ${the_w}
-            </ol>
-          </fieldset>
-        </form>
-        <div class="prodcut-list-cart">
-          <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
-          <button type="button" class="add-to-fav"><i class="fa far fa-heart" name="Whist List"></i></button>
+      // Adding class name product to the article created
+      article_item.classList.add('product') 
+   
+      article_item.innerHTML = `
+      <img src="img/${prod.prod_img}" alt="${prod.prod_name}">
+      <div class="prod-details">
+          <h3><a href="${prod.prod_link}">${prod.prod_name}</a></h3>
+          <p>${prod.prod_desc} <a href="${prod.prod_link}">see more</a></p>
+          <dl class="rating">
+            <data value="${prod.prod_prices[1]}"><del>$${prod.prod_prices[0]}</del> <ins>$${prod.prod_prices[1]}</ins></data>
+            <dd><p>Rating : ${prod.prod_rating}</p> 
+            ${the_r}
+          </dl>
+      
+          <form class="iterm-properties">
+            <fieldset>
+              <legend>Category</legend>
+              <ul>
+                 ${the_c}
+              </ul>
+            </fieldset>
+            <fieldset>
+              <legend>Weight in grams</legend>
+              <ol class="weight">
+                ${the_w}
+              </ol>
+            </fieldset>
+          </form>
+          <div class="prodcut-list-cart">
+            <button type="button" class="add-to-cart-btn"><i class="fa fas fa-shopping-cart"></i> Add to Cart</button>
+            <button type="button" class="add-to-fav"><i class="fa far fa-heart" name="Whist List"></i></button>
+          </div>
         </div>
-      </div>
-    `
-    // Adding the article element to the result section element
-    products_table.appendChild(article_item);
+      `
+      // Adding the article element to the result section element
+      products_table.appendChild(article_item);
+    })
+  }
+  catch(err) {
+    console.log("Error message: "+err.message)
+  }
 
-  
-  })
+
 }
 
 //  Sending the Product array to the set product method to redare the template
