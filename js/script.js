@@ -16,8 +16,6 @@ function myFunction() {
 const filt_toggle = document.querySelector(`.filt-toggle`)
 const filters = document.querySelector(`.filters`)
 
-
-
 try {
   filt_toggle.addEventListener('click',function () {
     if (filters.classList.contains(`m-hide`)) {
@@ -116,7 +114,7 @@ const setProductsTable = function(product_array){
     products_table.innerHTML = ``
     product_array.forEach((prod) => {
       
-      // Create article element to hold each product
+    // Create article element to hold each product
       const article_item = document.createElement('article')
       const the_weight = prod.prod_weight
       const the_cat = prod.prod_cat
@@ -144,7 +142,7 @@ const setProductsTable = function(product_array){
   
   
     
-      // Adding class name product to the article created
+    // Adding class name product to the article created
       article_item.classList.add('product') 
    
       article_item.innerHTML = `
@@ -178,15 +176,14 @@ const setProductsTable = function(product_array){
           </div>
         </div>
       `
-      // Adding the article element to the result section element
+    // Adding the article element to the result section element
       products_table.appendChild(article_item);
     })
   }
   catch(err) {
     console.log("Error message: "+err.message)
   }
-
-
+  
 }
 
 //  Sending the Product array to the set product method to redare the template
@@ -241,6 +238,9 @@ filter_cat.forEach((cat)=>{
       // innerHTML
   })
 })
+
+
+// ================ Filters for weight ====================
 
 // filter_weight.forEach((wght)=>{
 //   wght.addEventListener('click', function(event){

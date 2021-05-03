@@ -3,7 +3,7 @@
 }
 html {
 	box-sizing: border-box;
-	--global-color-primary: #1b1b1b; 
+	--global-color-primary: #1f1f1f; 
 	--global-color-secondary: #343435;   /* main colour */
 	--alt-color:#ae976f;    /* variant */
 	--prim-text-color: #ffffff;     /* for text or icons */
