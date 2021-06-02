@@ -26,7 +26,7 @@
             <label>
               <input type="search" name="find" id="find" placeholder="Search for Products..." class="find">
             </label>
-            <button type="button"><i class="fa fa-search fa-2x"></i></button>
+            <button type="button"> </button>
           </form>  
         </div>
 
@@ -49,7 +49,7 @@
         <!-- Navigation menu -->      
         <nav aria-label="Primary" class="navigation  m-hide">
           <ul class="menu">
-            <li><a href="#">HOME</a></li>
+            <li><a href="./index.html">HOME</a></li>
             <li><a href="#">Shop</a>
               <ul class="submenu">
                 <li><a href="#">Dessert Wine</a></li>
@@ -88,20 +88,24 @@
               <legend>Category</legend>
               <ul class="filter-list">
                 <li>
-                  <input type="checkbox" name="filt_cat" value="dessert" id="dessert-wine"> 
+                  <input type="checkbox" name="filt_cat" value="dessert" id="dessert-wine" class="checkbox.hide"> 
                   <label for="dessert-wine">Dessert Wine</label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="checkbox" name="filt_cat" value="rose" id="rose-wine"> 
+                  <input type="checkbox" name="filt_cat" value="rose" id="rose-wine" class="checkbox.hide"> 
                   <label for="rose-wine">Rose Wine</label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="checkbox" name="filt_cat" value="red" id="red-wine"> 
+                  <input type="checkbox" name="filt_cat" value="red" id="red-wine" class="checkbox.hide"> 
                   <label for="red-wine">Red Wine</label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="checkbox" name="filt_cat" value="white" id="white-wine"> 
+                  <input type="checkbox" name="filt_cat" value="white" id="white-wine" class="checkbox.hide"> 
                   <label for="white-wine">White Wine</label>
+                  <div class="control-me"></div>
                 </li>
               </ul>
             </fieldset>
@@ -109,20 +113,24 @@
               <legend>Weight</legend>
               <ol class="filter-list">
                 <li>
-                  <input type="checkbox" name="filt_weight" value="100" id="100g">
+                  <input type="checkbox" name="filt_weight" value="100" id="100g" class="checkbox.hide">
                   <label for="100g">100g</label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="checkbox" name="filt_weight" value="200" id="200g">
+                  <input type="checkbox" name="filt_weight" value="200" id="200g" class="checkbox.hide">
                   <label for="200g">200g</label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="checkbox" name="filt_weight" value="800" id="800g"> 
-                  <label for="800g">500g</label>
+                  <input type="checkbox" name="filt_weight" value="800" id="500g" class="checkbox.hide"> 
+                  <label for="500g">500g</label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="checkbox" name="filt_weight" value="800" id="800g">
+                  <input type="checkbox" name="filt_weight" value="800" id="800g" class="checkbox.hide">
                   <label for="800g">800g</label>
+                  <div class="control-me"></div>
                 </li>
               </ol>
             </fieldset>
@@ -130,35 +138,39 @@
               <legend>Ratings (above)</legend>
               <ol class="filter-list">
                 <li>
-                  <input type="radio" name="rating" value="4" id="aboveFour">
+                  <input type="radio" name="rating" value="4" id="aboveFour" class="checkbox.hide">
                   <label for="aboveFour" class="rating">
                     <span class="material-icons">star</span><span class="material-icons" >star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span>
                   </label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="radio" name="rating" value="3" id="aboveThree">
+                  <input type="radio" name="rating" value="3" id="aboveThree" class="checkbox.hide">
                   <label for="aboveThree" class="rating">
                     <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
                   </label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="radio" name="rating" value="2" id="aboveTwo">
+                  <input type="radio" name="rating" value="2" id="aboveTwo" class="checkbox.hide">
                   <label for="aboveTwo" class="rating">
                     <span class="material-icons">star</span><span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
                   </label>
+                  <div class="control-me"></div>
                 </li>
                 <li>
-                  <input type="radio" name="rating" value="1" id="aboveOne">
+                  <input type="radio" name="rating" value="1" id="aboveOne" class="radio.hide">
                   <label for="aboveOne" class="rating">
                     <span class="material-icons">star</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span><span class="material-icons">star_border</span>
                   </label>
+                  <div class="control-me"></div>
                 </li>
               </ol>
             </fieldset>
           </div>
           <fieldset>
             <label for="sort">Sort by</label>
-            <select name="sort" id="sort">
+            <select name="sort" id="sort" class="sort">
               <option value="price-high">Price, highest to lowest</option>
               <option value="price-low">Price, lowest to highest</option>
               <option value="price-low">Sort by popularity</option>
