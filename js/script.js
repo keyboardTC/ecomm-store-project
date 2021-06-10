@@ -100,6 +100,11 @@ const productsAr = [
 
 ]
 
+const searchFilter = {
+  catergories: []
+}
+
+
 // Select the element all products
 const products_table = document.querySelector('#prod');
 let the_ProductsAr = productsAr
@@ -186,58 +191,101 @@ const setProductsTable = function(product_array){
   
 }
 
-//  Sending the Product array to the set product method to redare the template
-setProductsTable(the_ProductsAr)
 
-//  filtering by category/colour of wine
-const filter_cat = document.querySelectorAll(`[name="filt_cat"]`)
-const filter_weight = document.querySelectorAll(`[name="filt_weight"]`)
+const filterAndSort = function() {
+  // Do all the filtering, then print the list
+  // filter() is a loop that includes/excludes values from an array to build a new array
+  //    If the callback function returns true, the value is added to the new array
+  //    If the callback function returns false, the value is NOT added to the new array
 
-filter_cat.forEach((cat)=>{
+  console.log(searchFilter.catergories.length)
 
-  cat.addEventListener(`click`, function(event){
+  const filteredArray = productsAr.filter((product) => searchFilter.catergories.length === 0 || 
+                                                       product.prod_cat.filter((cat) => searchFilter.catergories.includes(cat)).length > 0)
 
-     filteredProductsAr = []
-    console.log(filteredProductsAr)
-    const cat_value = event.target.value
-    if (cat.checked) {
-     
-       filteredProductsAr = the_ProductsAr.filter((prod)=>{
-        const the_cat = prod.prod_cat
-        let checker = null
-        the_cat.forEach((cat)=>{
-          if (cat.toLowerCase() === cat_value.toLowerCase()) {
-            checker = true
-            return true
-          } else {
-            checker += false
-            return false
-          }
-        })
-        if (checker) {
-          console.log('Good job')
-          return true
-        } else {
-          return false
-        }
-      })
-      console.log("checked")
-      console.log(filteredProductsAr)
+  // Go build the UI with the new filtered array
+  // setStudentToTable(filteredArray)
+  setProductsTable(filteredArray)
 
-      //  Sending the Product array to the set product method to redare the template
-      previous_ProductsAr = the_ProductsAr
-      the_ProductsAr = filteredProductsAr
-      setProductsTable(the_ProductsAr)
-    }else{
-      console.log("Unchecked")
-      console.log(filteredProductsAr)
-      the_ProductsAr =  previous_ProductsAr
-      setProductsTable(previous_ProductsAr)
-    }
-    
-      // innerHTML
-  })
+}
+
+// Courses filter
+const filterCategory = document.getElementById(`filterCategory`)
+//============================================ 
+filterCategory.addEventListener(`change`, function(event) {
+
+  // A few ways to gather all of the companion elements with the same "name"
+  // const theCourses = document.querySelectorAll(`[name="${event.target.name}"]`)
+  // const theCourses = event.target.closest(`fieldset`).elements
+  const thecategory = event.target.form.elements[event.target.name]
+
+  // Filter to only the checked ones, then return the "value" of those to an array
+  searchFilter.catergories = [...thecategory]
+                            .filter((cat) => cat.checked)
+                            .map((cat) => cat.value)
+
+                       console.log(searchFilter.catergories)     
+
+  filterAndSort()
 })
+
+
+
+
+
+
+// //  Sending the Product array to the set product method to redare the template
+// setProductsTable(the_ProductsAr)
+
+// //  filtering by category/colour of wine
+// const filter_cat = document.querySelectorAll(`[name="filt_cat"]`)
+// const filter_weight = document.querySelectorAll(`[name="filt_weight"]`)
+
+// filter_cat.forEach((cat)=>{
+
+//   cat.addEventListener(`click`, function(event){
+
+//      filteredProductsAr = []
+//     console.log(filteredProductsAr)
+//     const cat_value = event.target.value
+//     if (cat.checked) {
+     
+//        filteredProductsAr = the_ProductsAr.filter((prod)=>{
+//         const the_cat = prod.prod_cat
+//         let checker = null
+//         the_cat.forEach((cat)=>{
+//           if (cat.toLowerCase() === cat_value.toLowerCase()) {
+//             checker = true
+//             return true
+//           } else {
+//             checker += false
+//             return false
+//           }
+//         })
+//         if (checker) {
+//           console.log('Good job')
+//           return true
+//         } else {
+//           return false
+//         }
+//       })
+//       console.log("checked")
+//       console.log(filteredProductsAr)
+
+//       //  Sending the Product array to the set product method to redare the template
+//       previous_ProductsAr = the_ProductsAr
+//       the_ProductsAr = filteredProductsAr
+//       setProductsTable(the_ProductsAr)
+//     }else{
+//       console.log("Unchecked")
+//       console.log(filteredProductsAr)
+//       the_ProductsAr =  previous_ProductsAr
+//       setProductsTable(previous_ProductsAr)
+//     }
+    
+//       // innerHTML
+//   })
+// })
 
 
 // ================ Filters for weight ====================
