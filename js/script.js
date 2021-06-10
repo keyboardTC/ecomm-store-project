@@ -191,6 +191,7 @@ const setProductsTable = function(product_array){
   
 }
 
+setProductsTable(productsAr)
 
 const filterAndSort = function() {
   // Do all the filtering, then print the list
@@ -209,7 +210,7 @@ const filterAndSort = function() {
 
 }
 
-// Courses filter
+// Product filter
 const filterCategory = document.getElementById(`filterCategory`)
 //============================================ 
 filterCategory.addEventListener(`change`, function(event) {
