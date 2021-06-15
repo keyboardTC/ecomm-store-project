@@ -54,7 +54,7 @@ const productsAr = [
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
     prod_prices: [50.00, 39.00],
     prod_rating: 4,
-    prod_cat: ['Red', 'Dessert', 'White'],
+    prod_cat: ['red', 'dessert', 'white'],
     prod_weight: [500, 200],
   },
   {
@@ -64,7 +64,7 @@ const productsAr = [
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
     prod_prices: [50.00, 39.00],
     prod_rating: 5,
-    prod_cat: ['Red', 'Rose','White'],
+    prod_cat: ['red', 'rose','white'],
     prod_weight: [100, 800]
   },
   {
@@ -74,7 +74,7 @@ const productsAr = [
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
     prod_prices: [50.00, 39.00],
     prod_rating: 3,
-    prod_cat: ['Dessert', 'White'],
+    prod_cat: ['dessert', 'white'],
     prod_weight: [100, 200, 800]
   },
   {
@@ -84,7 +84,7 @@ const productsAr = [
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
     prod_prices: [50.00, 39.00],
     prod_rating: 4,
-    prod_cat: ['Red','Rose'],
+    prod_cat: ['red','rose'],
     prod_weight: [100, 200]
   },
   {
@@ -94,7 +94,7 @@ const productsAr = [
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
     prod_prices: [50.00, 39.00],
     prod_rating: 1,
-    prod_cat: ['Red','Rose', 'dessert'],
+    prod_cat: ['red','rose', 'dessert'],
     prod_weight: [100, 200]
   }
 

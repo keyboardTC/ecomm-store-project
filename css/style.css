@@ -189,10 +189,6 @@ label.rating{
     padding: .3em;
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(../img/background-wood.jpg);
 }
-.filter-list li input[type=checkbox], .filter-list li input[type=radio]{
-    /* height: 40px; */
-    width: 60px;
-}
 
 
 /* <==================== footer styling ============> */
@@ -232,15 +228,17 @@ label.rating{
 .product.hide {
     display: none;
 }
-input:checked ~ .control-me::after {
+input:checked ~ label .control-me::after {
     content: '🍷';
 }
-.control-me::after {
+.control-me {
+    cursor: pointer;
+    display: inline;
     content: '';
     position: absolute; 
     text-align: center;
     left: 1.5em;
-    top: .2em;
+    top: .3em;
     width: 1.4em;
     height: 1.4em;
     border: 1px solid rgb(0, 0, 0);
@@ -251,14 +249,21 @@ input:checked ~ .control-me::after {
     -webkit-transition: all .275s;
         transition: all .275s;
 }
-input.checkbox.hide, #aboveOne,#aboveTwo,#aboveThree,#aboveFour{
-    appearance: none;
+.filter-list li input[type=checkbox], .filter-list li input[type=radio]{
+    /* height: 40px; */
+    width: 60px;
+    opacity: 0;
 }
+
 .sort{
     height: 2.5em;
     padding: .2em;
     background-color: var(--alt-color);
     font-weight: bolder;
+}
+.sort:hover{
+    background-color:var(--btn-color);
+    color: var(--prim-text-color);
 }
 /* ============== start media queries ============*/
 @media only screen and (min-width: 992px){
