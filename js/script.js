@@ -52,7 +52,7 @@ const productsAr = [
     prod_link: 'product-page.html',
     prod_name: 'Product1',
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
-    prod_prices: [50.00, 39.00],
+    prod_prices: [50.00, 79.00],
     prod_rating: 4,
     prod_cat: ['red', 'dessert', 'white'],
     prod_weight: [500, 200],
@@ -72,7 +72,7 @@ const productsAr = [
     prod_link: 'product-page.html',
     prod_name: 'Product3',
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
-    prod_prices: [50.00, 39.00],
+    prod_prices: [50.00, 410.00],
     prod_rating: 3,
     prod_cat: ['dessert', 'white'],
     prod_weight: [100, 200, 800]
@@ -82,7 +82,7 @@ const productsAr = [
     prod_link: 'product-page.html',
     prod_name: 'Product4',
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
-    prod_prices: [50.00, 39.00],
+    prod_prices: [50.00, 79.00],
     prod_rating: 4,
     prod_cat: ['red','rose'],
     prod_weight: [100, 200]
@@ -92,7 +92,7 @@ const productsAr = [
     prod_link: 'product-page.html',
     prod_name: 'Product4',
     prod_desc: 'Here is a shot of this product that might entice a user to click and add it to their cart.',
-    prod_prices: [50.00, 39.00],
+    prod_prices: [50.00, 21.00],
     prod_rating: 1,
     prod_cat: ['red','rose', 'dessert'],
     prod_weight: [100, 200]
@@ -101,7 +101,10 @@ const productsAr = [
 ]
 
 const searchFilter = {
-  catergories: []
+  catergories: [],
+  weight: [],
+  rating: 0,
+  sort: (a, b) => a.prod_prices[1] - b.prod_prices[1]
 }
 
 
@@ -144,9 +147,7 @@ const setProductsTable = function(product_array){
           the_r += ` <span class="material-icons">star_border</span>`
         }
       }
-  
-  
-    
+
     // Adding class name product to the article created
       article_item.classList.add('product') 
    
@@ -199,10 +200,14 @@ const filterAndSort = function() {
   //    If the callback function returns true, the value is added to the new array
   //    If the callback function returns false, the value is NOT added to the new array
 
-  console.log(searchFilter.catergories.length)
+  // console.log(searchFilter.rating)
 
-  const filteredArray = productsAr.filter((product) => searchFilter.catergories.length === 0 || 
+  const filteredArray = productsAr.filter((product) => searchFilter.rating == product.prod_rating || searchFilter.rating === 0) 
+                                  .filter((product) => searchFilter.catergories.length === 0 || 
                                                        product.prod_cat.filter((cat) => searchFilter.catergories.includes(cat)).length > 0)
+                                  .filter((product) => searchFilter.weight.length === 0 || 
+                                                        product.prod_weight.filter((wght) => searchFilter.weight.includes(wght)).length > 0) 
+                                  .sort(searchFilter.sort)           
 
   // Go build the UI with the new filtered array
   // setStudentToTable(filteredArray)
@@ -210,9 +215,8 @@ const filterAndSort = function() {
 
 }
 
-// Product filter
+// Product category filter
 const filterCategory = document.getElementById(`filterCategory`)
-//============================================ 
 filterCategory.addEventListener(`change`, function(event) {
 
   // A few ways to gather all of the companion elements with the same "name"
@@ -224,15 +228,51 @@ filterCategory.addEventListener(`change`, function(event) {
   searchFilter.catergories = [...thecategory]
                             .filter((cat) => cat.checked)
                             .map((cat) => cat.value)
-
-                       console.log(searchFilter.catergories)     
-
+  console.log(searchFilter.catergories)     
   filterAndSort()
 })
 
+// Product weight filter
+const filterWeight = document.getElementById(`filterWeight`)
+filterWeight.addEventListener(`change`, function(event){
 
+  const theWeight = event.target.form.elements[event.target.name]
+  searchFilter.weight = [...theWeight]
+                        .filter((weight) => weight.checked)
+                        .map((weight) => {
+                          wght = weight.value
+                          return parseInt(wght)
+                        })
+  console.log(searchFilter.weight)
+  filterAndSort()
+})
 
+// Product filter for rating
+const filterRating = document.getElementById(`rating`)
+filterRating.addEventListener(`change`, function(event) {
+  
+  const ratings = event.target.form.elements[event.target.name]
+  searchFilter.rating = ratings.value
 
+  console.log(searchFilter.rating)
+  filterAndSort()
+})
+
+// Filter for Sorting
+const sortBy = document.getElementById(`sortBy`)
+sortBy.addEventListener(`change`, function(event) {
+  
+  if (event.target.value === "0") {
+    searchFilter.sort = (a, b) => a.prod_prices[1] - b.prod_prices[1]
+    console.log(event.target.value)
+    // console.log(b.prod_prices[1] )
+  } else if (event.target.value === "1") {
+    searchFilter.sort = (a, b) => b.prod_prices[1] - a.prod_prices[1]
+    console.log(searchFilter.sort)
+  }
+
+  filterAndSort()
+})
 
 
 // //  Sending the Product array to the set product method to redare the template
@@ -288,22 +328,3 @@ filterCategory.addEventListener(`change`, function(event) {
 //   })
 // })
 
-
-// ================ Filters for weight ====================
-
-// filter_weight.forEach((wght)=>{
-//   wght.addEventListener('click', function(event){
-//     const weight_value = event.target.value
-//     if (wght.checked) {
-//      const products_displaced = document.querySelectorAll(`[name="size"]`)
-//      console.log(products_displaced)
-//    }else{
-//      console.log("Unchecked")
-//      console.log(filteredProductsAr)
-//      the_ProductsAr =  previous_ProductsAr
-//      setProductsTable(previous_ProductsAr)
-//    }
-//   })
-
-// // innerHTML
-// })

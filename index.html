@@ -108,7 +108,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset>
+            <fieldset id="filterWeight">
               <legend>Weight</legend>
               <ol class="filter-list">
                 <li>
@@ -122,7 +122,7 @@
                   
                 </li>
                 <li>
-                  <input type="checkbox" name="filt_weight" value="800" id="500g" class="checkbox.hide"> 
+                  <input type="checkbox" name="filt_weight" value="500" id="500g" class="checkbox.hide"> 
                   <label for="500g"><div class="control-me"></div>500g</label>
                   
                 </li>
@@ -133,7 +133,7 @@
                 </li>
               </ol>
             </fieldset>
-            <fieldset>
+            <fieldset id="rating">
               <legend>Ratings (above)</legend>
               <ol class="filter-list">
                 <li>
@@ -173,11 +173,9 @@
           </div>
           <fieldset>
             <label for="sort">Sort by</label>
-            <select name="sort" id="sort" class="sort">
-              <option value="price-high">Price, highest to lowest</option>
-              <option value="price-low">Price, lowest to highest</option>
-              <option value="price-low">Sort by popularity</option>
-              <option value="newest">Sort by latest</option>
+            <select name="sort" id="sortBy" class="sort">
+              <option value="1">Price, highest to lowest</option>
+              <option value="0">Price, lowest to highest</option>
             </select>
           </fieldset>
         </form>
