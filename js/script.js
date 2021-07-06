@@ -110,8 +110,7 @@ const searchFilter = {
 
 // Select the element all products
 const products_table = document.querySelector('#prod');
-let the_ProductsAr = productsAr
-let previous_ProductsAr = []
+
 
 
 
@@ -274,57 +273,4 @@ sortBy.addEventListener(`change`, function(event) {
   filterAndSort()
 })
 
-
-// //  Sending the Product array to the set product method to redare the template
-// setProductsTable(the_ProductsAr)
-
-// //  filtering by category/colour of wine
-// const filter_cat = document.querySelectorAll(`[name="filt_cat"]`)
-// const filter_weight = document.querySelectorAll(`[name="filt_weight"]`)
-
-// filter_cat.forEach((cat)=>{
-
-//   cat.addEventListener(`click`, function(event){
-
-//      filteredProductsAr = []
-//     console.log(filteredProductsAr)
-//     const cat_value = event.target.value
-//     if (cat.checked) {
-     
-//        filteredProductsAr = the_ProductsAr.filter((prod)=>{
-//         const the_cat = prod.prod_cat
-//         let checker = null
-//         the_cat.forEach((cat)=>{
-//           if (cat.toLowerCase() === cat_value.toLowerCase()) {
-//             checker = true
-//             return true
-//           } else {
-//             checker += false
-//             return false
-//           }
-//         })
-//         if (checker) {
-//           console.log('Good job')
-//           return true
-//         } else {
-//           return false
-//         }
-//       })
-//       console.log("checked")
-//       console.log(filteredProductsAr)
-
-//       //  Sending the Product array to the set product method to redare the template
-//       previous_ProductsAr = the_ProductsAr
-//       the_ProductsAr = filteredProductsAr
-//       setProductsTable(the_ProductsAr)
-//     }else{
-//       console.log("Unchecked")
-//       console.log(filteredProductsAr)
-//       the_ProductsAr =  previous_ProductsAr
-//       setProductsTable(previous_ProductsAr)
-//     }
-    
-//       // innerHTML
-//   })
-// })
 
